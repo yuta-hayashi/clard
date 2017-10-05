@@ -1,83 +1,86 @@
 <?php
- 
+
  $id = "";
- 
+
  $title = "";
- 
+
+ $subject = "";
+
  $remind_date = "";
- 
+
  //index.phpで渡されたidの値
  if($_GET['id']){
-  
-  $host = "localhost";
-  
-  $user = "root";
-  
-  $pass = "clardpass555";
-  
-  $db = "reminder";
-  
-  
-  $param = "mysql:dbname=".$db.";host=".$host;
-  
-  $pdo = new PDO($param, $user, $pass);
-  
+
+//データーベース設定
+  require_once dirname(__FILE__) . './dsn.php';
+  $param = "mysql:dbname=".$dsn['dbname'].";host=".$dsn['host'];
+  $pdo = new PDO($param, $dsn['user'], $dsn['pass']);
   $pdo->query('SET NAMES utf8;');
-  
-  
+
   $stmt = $pdo->prepare("SELECT * FROM reminder where id= :id");
-  
+
   $stmt->bindValue(':id', $_GET["id"], PDO::PARAM_INT);
-  
+
   $flag = $stmt->execute();
-  
-  
+
   $row = $stmt->fetch();
-  
+
   $id = $row['id'];
-  
-  $title = $row['title']; 
+
+  $title = $row['title'];
+
+  $subject = $row['subject'];
 
   $remind_date = $row['remind_date'];
-  
+
   unset($pdo);
-  
-  
  }
 
 ?>
 
 
-<html lang="ja"> 
+<html lang="ja">
 
-  <head> 
+  <head>
 
-    <title>登録画面 | リマインダー</title> 
+    <title>登録画面 | リマインダー</title>
 
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-  </head> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.js"></script>
 
-  <body> 
+  </head>
 
-    <h1>登録画面</h1> 
+  <body>
+    <h1>
+  		<i class=" checked calendar icon"></i>
+  	Clard</h1>
+    <h3>登録画面</h3>
 
-    <form action="register.php" method="post"> 
+    <form action="register.php" method="post" class="ui form">
+      <input type="hidden" name="id" value="<?php echo $id ?>" />
 
-      <input type="hidden" name="id" value="<?php echo $id ?>" /> 
+      <dev class="field">
+        <label>教科</label>
+        <input type="text" name="subject" value="<?php echo $subject ?>" />
+      </div>
 
-      <table> 
-	
-        <tr><td>タイトル</td><td><input type="text" name="title" value="<?php echo $title ?>" /></td></tr> 
+      <dev class="field">
+        <label>内容</label>
+        <input type="text" name="title" value="<?php echo $title ?>" />
+      </div>
 
-        <tr><td>期日</td><td><input type="text" name="remind_date" value="<?php echo $remind_date ?>" /></td></tr> 
+      <dev class="field">
+        <label>期日</label>
+        <input type="text" name="remind_date" value="<?php echo $remind_date ?>" />
+      </div>
 
-      </table> 
+      </div>
       <p>*期日はYYYY-MM-DDの形で入力してください。(例:2016-07-22)</p>
-      <input type="submit" value="登録" /> 
+      <button class="ui button" type="submit">登録</button>
 
-    </form> 
-
-  </body> 
-
-</html> 
+    </form>
+  </body>
+</html>
