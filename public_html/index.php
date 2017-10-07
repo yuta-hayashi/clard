@@ -56,6 +56,7 @@ $stmt = $pdo->query($sql);
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.js"></script>
 
 
+
 </head>
 
 <body>
@@ -64,7 +65,7 @@ $stmt = $pdo->query($sql);
 		Clard</h1>
 		<?php if($auth->is_logged_in()): ?>
 			<div class="ui top attached tabular menu">
-				<a class="item active" data-tab="reminder">課題一覧</a>
+				<a class="item active" data-tab="reminder">課題一覧??</a>
 				<a class="item" data-tab="container">授業変更</a>
 
 			</div>
