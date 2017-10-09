@@ -78,7 +78,7 @@
       </div>
 
       </div>
-      <p>*期日はYYYY-MM-DDの形で入力してください。(例:2016-07-22)</p>
+      <p>*期日はYYYY-MM-DDの形で入力してください。(例:2017-10-22)</p>
       <button class="ui green button" type="submit">登録</button>
 
     </form>
