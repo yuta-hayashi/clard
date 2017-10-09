@@ -55,7 +55,7 @@
 
   <body>
     <h1>
-  		<i class=" checked calendar icon"></i>
+  		<i class=" green checked calendar icon"></i>
   	Clard</h1>
     <h3>登録画面</h3>
 
