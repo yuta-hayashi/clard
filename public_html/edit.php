@@ -58,30 +58,28 @@
   		<i class=" green checked calendar icon"></i>
   	Clard</h1>
     <h3>登録画面</h3>
-    <div class="full height">
-    <form action="register.php" method="post" class="ui form">
+<div class="ui divider"></div>
+    <form action="register.php" method="post" class="ui large form">
       <input type="hidden" name="id" value="<?php echo $id ?>" />
 
-      <dev class="field">
+      <div class="field">
         <label>教科</label>
         <input type="text" name="subject" value="<?php echo $subject ?>" />
       </div>
 
-      <dev class="field">
+      <div class="field">
         <label>内容</label>
         <input type="text" name="title" value="<?php echo $title ?>" />
       </div>
 
-      <dev class="field">
+      <div class="field">
         <label>期日</label>
         <input type="text" name="remind_date" value="<?php echo $remind_date ?>" />
-      </div>
-
       </div>
       <p>*期日はYYYY-MM-DDの形で入力してください。(例:2017-10-22)</p>
       <button class="ui green button" type="submit">登録</button>
 
     </form>
-    </dev>
+
   </body>
 </html>
