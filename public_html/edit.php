@@ -58,7 +58,7 @@
   		<i class=" green checked calendar icon"></i>
   	Clard</h1>
     <h3>登録画面</h3>
-
+    <div class="full height">
     <form action="register.php" method="post" class="ui form">
       <input type="hidden" name="id" value="<?php echo $id ?>" />
 
@@ -82,5 +82,6 @@
       <button class="ui green button" type="submit">登録</button>
 
     </form>
+    </dev>
   </body>
 </html>
