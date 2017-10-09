@@ -79,7 +79,7 @@
 
       </div>
       <p>*期日はYYYY-MM-DDの形で入力してください。(例:2016-07-22)</p>
-      <button class="green ui button" type="submit">登録</button>
+      <button class="ui green button" type="submit">登録</button>
 
     </form>
   </body>
