@@ -90,7 +90,7 @@ $( function() {
 
     <div class="ui container">
       <div class="ui segments">
-    <form action="register.php ?>" method="post" class="ui form">
+    <form action="register.php?>" method="post" class="ui form">
       
       <input type="hidden" name = "class" value = "<?php echo $_GET['class']; ?>" />
       
