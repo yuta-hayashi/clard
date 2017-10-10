@@ -9,19 +9,31 @@
  $remind_date = "";
 
  //index.phpで渡されたidの値
- if($_GET['id']){
+ if(isset($_GET['id'])){
 
-//データーベース設定
-  require_once dirname(__FILE__) . './dsn.php';
-  $param = "mysql:dbname=".$dsn['dbname'].";host=".$dsn['host'];
-  $pdo = new PDO($param, $dsn['user'], $dsn['pass']);
+  $host = "localhost";
+
+  $user = "root";
+
+  $pass = "clardpass555";
+
+  $db = "reminder";
+
+
+  $param = "mysql:dbname=".$db.";host=".$host;
+
+  $pdo = new PDO($param, $user, $pass);
+
   $pdo->query('SET NAMES utf8;');
 
-  $stmt = $pdo->prepare("SELECT * FROM reminder where id= :id");
+  $classname = $_GET['class'];
+  
+  $stmt = $pdo->prepare("SELECT * FROM reminder_".$classname." where id= :id");
 
   $stmt->bindValue(':id', $_GET["id"], PDO::PARAM_INT);
 
   $flag = $stmt->execute();
+
 
   $row = $stmt->fetch();
 
@@ -34,6 +46,8 @@
   $remind_date = $row['remind_date'];
 
   unset($pdo);
+
+
  }
 
 ?>
@@ -51,15 +65,35 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.js"></script>
 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>jQuery UI Datepicker - Default functionality</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script>
+$( function() {
+  $( "#datepicker" ).datepicker({dateFormat: 'yy-mm-dd' });
+} );
+</script>
+
   </head>
 
   <body>
-    <h1>
-  		<i class=" green checked calendar icon"></i>
+
+    <h1 class="ui green ">
+        <i class="green checked calendar icon"></i>
   	Clard</h1>
-    <h3>登録画面</h3>
-<div class="ui divider"></div>
-    <form action="register.php" method="post" class="ui large form">
+
+    <h3 class="ui dividing header">登録画面</h3>
+
+    <div class="ui container">
+      <div class="ui segments">
+    <form action="register.php ?>" method="post" class="ui form">
+      
+      <input type="hidden" name = "class" value = "<?php echo $_GET['class']; ?>" />
+      
       <input type="hidden" name="id" value="<?php echo $id ?>" />
 
       <div class="field">
@@ -72,14 +106,17 @@
         <input type="text" name="title" value="<?php echo $title ?>" />
       </div>
 
-      <div class="field">
+      <dev class="field">
         <label>期日</label>
-        <input type="text" name="remind_date" value="<?php echo $remind_date ?>" />
+        <input type="text" id="datepicker" name="remind_date" value="<?php echo $remind_date ?>"/>
       </div>
-      <p>*期日はYYYY-MM-DDの形で入力してください。(例:2017-10-22)</p>
+    </div>
+    </div>
+
       <button class="ui green button" type="submit">登録</button>
 
     </form>
 
   </body>
+
 </html>

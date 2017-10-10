@@ -1,0 +1,24 @@
+<?php
+date_default_timezone_set('Asia/Tokyo');
+
+
+//header('Content-type: text/csv');
+
+// load json file
+$url = dirname(__FILE__).'/../data.json';
+
+$json = file_get_contents($url,true);
+
+if($json==false){
+	error("load error");
+	return;
+}
+
+$obj = json_decode($json,true);
+
+foreach ($obj['changes'] as $key => $value){
+	$arr = array ($value['date'],$value['class'],str_replace(",","・",$value['time']),$value['from'],$value['to'],$value['etc'],$value['sha1'],$value['create']);
+	echo implode(',', $arr)."\n";
+}
+
+?>
