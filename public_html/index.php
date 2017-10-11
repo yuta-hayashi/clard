@@ -41,7 +41,7 @@
 		//データーベース設定
 		$host = "localhost";
 		$user = "root";
-		$pass = "password";
+		$pass = "clardpass555";
 		$db = "reminder";
 
 	 $param = "mysql:dbname=".$db.";host=".$host;
