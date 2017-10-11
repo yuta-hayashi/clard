@@ -17,7 +17,7 @@
 
   $user = "root";
 
-  $pass = "clard555";
+  $pass = "clardpass555";
 
   $db = "reminder";
 
