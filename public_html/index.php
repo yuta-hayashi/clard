@@ -41,7 +41,7 @@
 		//データーベース設定
 		$host = "localhost";
 		$user = "root";
-		$pass = "clardpass555";
+		$pass = "password";
 		$db = "reminder";
 
 	 $param = "mysql:dbname=".$db.";host=".$host;
@@ -85,6 +85,7 @@
 	<div class="ui top attached tabular menu">
 		 <a class="item active" data-tab="reminder">課題一覧</a>
 	  <a class="item" data-tab="container">授業変更</a>
+	  <a class="item" data-tab="time_table">授業時間割</a>
 
 	</div>
 	<div class="ui bottom attached tab segment" data-tab="container">
@@ -216,6 +217,14 @@
 	  </div>
 	</div>
 </div>
+<div class="ui bottom attached tab segment" data-tab="time_table">
+		<div id="time_table">
+			<?php
+				 
+				include($classname.".html"); 
+			?>
+		</div>
+	</div>
 <span>クラス</span>
 			<select name="class" id="changeclass">
 				<?php
