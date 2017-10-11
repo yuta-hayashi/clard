@@ -1,5 +1,15 @@
 <?php
 
+ require_once(dirname(__FILE__).'/GoogleOAuth.php');
+	
+	$auth = new GoogleOAuth();
+
+	if(!$auth->is_logged_in()){
+		if($auth->has_refresh_token()){
+			$auth->re_oauth();
+		}
+	}
+
  $id = "";
 
  $title = "";
@@ -90,7 +100,7 @@ $( function() {
 
     <div class="ui container">
       <div class="ui segments">
-    <form action="register.php ?>" method="post" class="ui form">
+    <form action="./register.php ?>" method="post" class="ui form">
       
       <input type="hidden" name = "class" value = "<?php echo $_GET['class']; ?>" />
       
