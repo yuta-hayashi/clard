@@ -244,7 +244,8 @@
 	<?php if($auth->is_logged_in()): ?>
 		<footer class="ui  vertical footer segment">
 		  <div class="container">
-		    <div class="text-muted">
+		    <div class="ui form">
+		    	<div class="field">
 		   		<span>クラス</span>
 				<select name="class" id="changeclass">
 					<option selected>選択してください</option>
@@ -259,6 +260,7 @@
 					<span class="hidden-xs"><?php $tmp=explode('@', $email); print $tmp[0]; ?> でログイン中</span>
 					<a href="./logout.php">ログアウト</a>
 				</span>
+			</div>
 			</div>
 		  </div>
 		</footer>
