@@ -6,14 +6,6 @@
 
 		$weekdays = array('日','月','火','水','木','金','土');
 
-		$auth = new GoogleOAuth();
-
-		if(!$auth->is_logged_in()){
-			if($auth->has_refresh_token()){
-				$auth->re_oauth();
-			}
-		}
-
 		$query = null;
 		
 		//デフォルトは3I
@@ -200,11 +192,8 @@
 		          .$row['title'].
 		        "</div>
 		      </div>";
-<<<<<<< HEAD
 		      echo "最終更新者: ".$row['_user'];
-=======
-
->>>>>>> origin/master
+		      
 		      echo "<div class='extra content'>
 		        <div class='ui two buttons'>
 		          <div class='ui basic green button' onclick='location.href=\"edit.php?id=".$row['id']."&class=".$classname."\"'>変更</div>
