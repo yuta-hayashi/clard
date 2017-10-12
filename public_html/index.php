@@ -28,15 +28,6 @@
 			$classname = $_POST['class'];
 		}
 		
-		$email = $auth->get_email();
-	$email_z = substr($email, 0, 7);
-	$email_class = strtoupper(substr($email, 0, 1));
-	$get_class = substr($classname, 1, 1);
-	$f = false;
-	if(strcmp($email_class, $get_class) != 0){
-		$f = true;
-	}
-
 		if(!empty($classname)){
 			if(preg_match_all('/^([12])(EM|AC)$/', $classname, $matches)){
 				$query = '/^'.$matches[0][0].'|^'.$matches[1][0].'年専攻科$/';
@@ -211,7 +202,6 @@
 		      </div>";
 <<<<<<< HEAD
 		      echo "最終更新者: ".$row['_user'];
-		      if(!$f){
 =======
 
 >>>>>>> origin/master
@@ -227,7 +217,7 @@
 		    </div>
 		    </div>";
 				$kadai++;
-		}
+		
 		if ($kadai==0) {
 			echo "<h4>課題は登録されていません。</h4>";
 		}
