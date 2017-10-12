@@ -1,5 +1,7 @@
 <?php
 		require_once(dirname(__FILE__).'/GoogleOAuth.php');
+		
+		$auth = new GoogleOAuth();
 		date_default_timezone_set('Asia/Tokyo');
 
 		$weekdays = array('日','月','火','水','木','金','土');
@@ -25,6 +27,15 @@
 		if(isset($_POST['class'])){
 			$classname = $_POST['class'];
 		}
+		
+		$email = $auth->get_email();
+	$email_z = substr($email, 0, 7);
+	$email_class = strtoupper(substr($email, 0, 1));
+	$get_class = substr($classname, 1, 1);
+	$f = false;
+	if(strcmp($email_class, $get_class) != 0){
+		$f = true;
+	}
 
 		if(!empty($classname)){
 			if(preg_match_all('/^([12])(EM|AC)$/', $classname, $matches)){
@@ -198,11 +209,13 @@
 		        "</div>
 		      </div>";
 		      echo "最終更新者: ".$row['_user'];
+		      if(!$f){
 		      echo "<div class='extra content'>
 		        <div class='ui two buttons'>
 		          <div class='ui basic green button' onclick='location.href=\"edit.php?id=".$row['id']."&class=".$classname."\"'>変更</div>
 		          <div class='ui basic red button'
 		          onclick=\"return confirm('削除してよろしいですか？') && (location.href='delete.php?id=".$row['id']."&class=".$classname."') || false\">削除</div>";
+		      }
 
 		echo "
 		      </div>

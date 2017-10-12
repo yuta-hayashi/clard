@@ -9,6 +9,16 @@
 			$auth->re_oauth();
 		}
 	}
+	
+	$email = $auth->get_email();
+	$email_z = substr($email, 0, 7);
+	$email_class = strtoupper(substr($email, 0, 1));
+	$get_class = substr($_GET['class'], 1, 1);
+		
+	if(strcmp($email_class, $get_class) != 0){
+		echo "<script>alert('他学科へのアクセスはできません。');</script>";
+		echo "<script>location.href='index.php'</script>";
+	}
 
  $id = "";
 
