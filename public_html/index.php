@@ -71,12 +71,12 @@
 
 	<h1>
 		<i class="green checked calendar icon"></i>
-	Clard&#32;&#946;</h1>
+	Clard&#32;&#946;v2</h1>
 	</h1>
 
 	<div class="ui warning message">
   <div class="header">
-	このウェブサービスは3年電子情報工学科のみ利用できます。
+	このウェブサービスは電子情報工学科のみ利用できます。
   </div>
   なお、ベータ版につき不具合が生じる場合があります。
 </div>
@@ -193,11 +193,12 @@
 		        echo "<div class='meta'>"
 		          .$row['remind_date'].
 		        "</div>";
+		        echo "<div class='meta'>最終更新者: ".$row['_user']."</div>";
 		        echo "<div class='description'>"
 		          .$row['title'].
 		        "</div>
 		      </div>";
-		      echo "最終更新者: ".$row['_user'];
+
 		      echo "<div class='extra content'>
 		        <div class='ui two buttons'>
 		          <div class='ui basic green button' onclick='location.href=\"edit.php?id=".$row['id']."&class=".$classname."\"'>変更</div>
@@ -225,13 +226,13 @@
 			?>
 		</div>
 	</div>
-<span>クラス</span>
+<!--<span>クラス</span>
 			<select name="class" id="changeclass">
 				<?php
 					foreach(array('1M','1E','1I','1C','1A','2M','2E','2I','2C','2A','3M','3E','3I','3C','3A','4M','4E','4I','4C','4A','5M','5E','5I','5C','5A','1EM','1AC','2EM','2AC','ALL') as $name){
 							echo "<option value=\"".$name."\">".$name."</option>";
 					}
-				?>
+				?>-->
 			</select>
 
 	<!--タブの動作-->
@@ -243,16 +244,17 @@
 	<?php if($auth->is_logged_in()): ?>
 		<footer class="ui  vertical footer segment">
 		  <div class="container">
-		   <!-- <div class="text-muted">
+		    <div class="text-muted">
 		   		<span>クラス</span>
-				<select name="class" class="class">
+				<select name="class" id="changeclass">
 					<option selected>選択してください</option>
 					<?php
-						foreach(array('1M','1E','1I','1C','1A','2M','2E','2I','2C','2A','3M','3E','3I','3C','3A','4M','4E','4I','4C','4A','5M','5E','5I','5C','5A','1EM','1AC','2EM','2AC','ALL') as $name){
+						foreach(array('1I','2I','3I','4I','5I') as $name){
 							echo "<option value=\"".$name."\">".$name."</option>";
 						}
 					?>
-				</select>-->
+					<!--'1M','1E','1I','1C','1A','2M','2E','2I','2C','2A','3M','3E','3I','3C','3A','4M','4E','4I','4C','4A','5M','5E','5I','5C','5A','1EM','1AC','2EM','2AC','ALL' -->
+				</select>
 				<span class="login_info">
 					<span class="hidden-xs"><?php $tmp=explode('@', $email); print $tmp[0]; ?> でログイン中</span>
 					<a href="./logout.php">ログアウト</a>
