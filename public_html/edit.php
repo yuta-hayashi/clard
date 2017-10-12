@@ -118,17 +118,17 @@ $( function() {
 
       <div class="field">
         <label>教科</label>
-        <input type="text" name="subject" value="<?php echo $subject ?>" />
+        <input type="text" name="subject" value="<?php echo htmlspecialchars( $subject, ENT_QUOTES, 'UTF-8' ); ?>" />
       </div>
 
       <div class="field">
         <label>内容</label>
-        <input type="text" name="title" value="<?php echo $title ?>" />
+        <input type="text" name="title" value="<?php echo htmlspecialchars( $title, ENT_QUOTES, 'UTF-8' ); ?>" />
       </div>
 
       <dev class="field">
         <label>期日</label>
-        <input type="text" id="datepicker" name="remind_date" value="<?php echo $remind_date ?>"/>
+        <input type="text" id="datepicker" name="remind_date" value="<?php echo htmlspecialchars( $remind_date, ENT_QUOTES, 'UTF-8' ); ?>"/>
       </div>
     </div>
     </div>
