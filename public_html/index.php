@@ -19,7 +19,7 @@
 		if(isset($_POST['class'])){
 			$classname = $_POST['class'];
 		}
-		
+
 		if(!empty($classname)){
 			if(preg_match_all('/^([12])(EM|AC)$/', $classname, $matches)){
 				$query = '/^'.$matches[0][0].'|^'.$matches[1][0].'年専攻科$/';
@@ -192,21 +192,20 @@
 		          .$row['title'].
 		        "</div>
 		      </div>";
+
 		      echo "最終更新者: ".$row['_user'];
-		      
 		      echo "<div class='extra content'>
 		        <div class='ui two buttons'>
 		          <div class='ui basic green button' onclick='location.href=\"edit.php?id=".$row['id']."&class=".$classname."\"'>変更</div>
 		          <div class='ui basic red button'
 		          onclick=\"return confirm('削除してよろしいですか？') && (location.href='delete.php?id=".$row['id']."&class=".$classname."') || false\">削除</div>";
-		      }
 
 		echo "
 		      </div>
 		    </div>
 		    </div>";
 				$kadai++;
-		
+		}
 		if ($kadai==0) {
 			echo "<h4>課題は登録されていません。</h4>";
 		}
