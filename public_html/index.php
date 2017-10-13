@@ -277,9 +277,14 @@
 <div class="ui middle aligned center aligned grid">
 	<h2>ログイン</h2>
 	<h3>学校のGmailアカウントを使ってログインしてください</h3>
-
-
-	<a href="<?php print $auth->create_oauth_url(); ?>"><button class="ui green button">ログインする</button></a>
+	<div class="row">
+	<a href="<?php print $auth->create_oauth_url(); ?>">
+		<button class="big ui green button">ログインする</button>
+	</a>
+	<a href="HowToUse.html">
+		<button class="big ui green basic button"><i class="help circle outline icon"></i>使い方</button>
+	</a>
+</div>
 </div>
 
 <?php endif;  ?>
