@@ -193,7 +193,6 @@
 		        echo "<div class='meta'>"
 		          .$row['remind_date'].
 		        "</div>";
-		        echo "<div class='meta'>最終更新者: ".$row['_user']."</div>";
 		        echo "<div class='description'>"
 		          .$row['title'].
 		        "</div>
@@ -212,7 +211,11 @@
 				$kadai++;
 		}
 		if ($kadai==0) {
-			echo "<h4>課題は登録されていません。</h4>";
+			echo " <div class="card">
+								    <div class="content">
+								      <div class="description">課題は登録されていません。</div>
+								    </div>
+								  </div>";
 		}
 		?>
 	  </div>
