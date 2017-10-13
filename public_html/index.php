@@ -199,7 +199,6 @@
 		        "</div>
 		      </div>";
 
-		      echo "最終更新者: ".$row['_user'];
 		      echo "<div class='extra content'>
 		        <div class='ui two buttons'>
 		          <div class='ui basic green button' onclick='location.href=\"edit.php?id=".$row['id']."&class=".$classname."\"'>変更</div>
