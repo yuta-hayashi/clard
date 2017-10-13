@@ -74,13 +74,6 @@
 	Clard&#32;&#946;v2</h1>
 	</h1>
 
-	<div class="ui warning message">
-  <div class="header">
-	このウェブサービスは電子情報工学科のみ利用できます。
-  </div>
-  なお、ベータ版につき不具合が生じる場合があります。
-</div>
-
 <?php if($auth->is_logged_in()): ?>
 	<div class="ui top attached tabular menu">
 		 <a class="item active" data-tab="reminder">課題一覧</a>
