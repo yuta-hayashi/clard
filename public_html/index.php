@@ -280,12 +280,16 @@
 	<h3>学校のGmailアカウントを使ってログインしてください</h3>
 	<div class="row">
 	<a href="<?php print $auth->create_oauth_url(); ?>">
-		<button class="big ui green button">ログインする</button>
-	</a>
-	<a href="HowToUse.html">
-		<button class="big ui green basic button"><i class="help circle outline icon"></i>使い方</button>
+		<button class="big ui green button">ログイン</button>
 	</a>
 </div>
+<div class="row">
+	<a href="HowToUse.html">
+		<button class="big ui green basic button"><i class="green help circle icon"></i>使い方</button>
+	</a>
+</div>
+
+
 </div>
 
 <?php endif;  ?>
