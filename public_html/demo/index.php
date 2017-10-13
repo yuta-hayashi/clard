@@ -211,11 +211,7 @@
 				$kadai++;
 		}
 		if ($kadai==0) {
-			echo " <div class="card">
-								    <div class="content">
-								      <div class="description">課題は登録されていません。</div>
-								    </div>
-								  </div>";
+			echo "<h4>課題は登録されていません。</h4>";
 		}
 		?>
 	  </div>
