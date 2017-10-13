@@ -1,16 +1,16 @@
 <?php
 		require_once(dirname(__FILE__).'/GoogleOAuth.php');
-		date_default_timezone_set('Asia/Tokyo');
-
-		$weekdays = array('日','月','火','水','木','金','土');
-
+		
 		$auth = new GoogleOAuth();
-
 		if(!$auth->is_logged_in()){
 			if($auth->has_refresh_token()){
 				$auth->re_oauth();
 			}
 		}
+		
+		date_default_timezone_set('Asia/Tokyo');
+
+		$weekdays = array('日','月','火','水','木','金','土');
 
 		$query = null;
 		
@@ -187,18 +187,19 @@
 		    echo "<div class='card'>";
 		      echo "<div class='content'>";
 		        echo "<div class='header'>".
-		          $row['subject'].
+		          htmlspecialchars( $row['subject'], ENT_QUOTES, 'UTF-8' ).
 		        "</div>";
 
 		        echo "<div class='meta'>"
-		          .$row['remind_date'].
+		          .htmlspecialchars( $row['remind_date'], ENT_QUOTES, 'UTF-8' ).
 		        "</div>";
-		        echo "<div class='meta'>最終更新者: ".$row['_user']."</div>";
+		        echo "<div class='meta'>最終更新者: ".htmlspecialchars( $row['_user'], ENT_QUOTES, 'UTF-8' )."</div>";
 		        echo "<div class='description'>"
-		          .$row['title'].
+		          .htmlspecialchars( $row['title'], ENT_QUOTES, 'UTF-8' ).
 		        "</div>
 		      </div>";
 
+		      echo "最終更新者: ".$row['_user'];
 		      echo "<div class='extra content'>
 		        <div class='ui two buttons'>
 		          <div class='ui basic green button' onclick='location.href=\"edit.php?id=".$row['id']."&class=".$classname."\"'>変更</div>
