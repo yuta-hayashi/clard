@@ -9,9 +9,9 @@
 		}
 	}
   
-  //ログインしているユーザーのメールの学年、クラス部分を取得
 	$email = $auth->get_email();
-	$email_z = substr($email, 0, 7);
+	$tmp=explode('@', $email);
+	$email_z = $tmp[0];
   
   $host = "localhost";
 
