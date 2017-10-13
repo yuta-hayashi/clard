@@ -2,6 +2,12 @@
 		require_once(dirname(__FILE__).'/GoogleOAuth.php');
 		
 		$auth = new GoogleOAuth();
+		if(!$auth->is_logged_in()){
+			if($auth->has_refresh_token()){
+				$auth->re_oauth();
+			}
+		}
+		
 		date_default_timezone_set('Asia/Tokyo');
 
 		$weekdays = array('日','月','火','水','木','金','土');
