@@ -57,7 +57,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Clard&#32;&#946;</title>
+	<title>Clard&#32;demo</title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.css"/>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.js"></script>
@@ -71,7 +71,7 @@
 
 	<h1>
 		<i class="green checked calendar icon"></i>
-	Clard&#32;&#946;v2</h1>
+	Clard&#32;demo</h1>
 	</h1>
 
 <?php if($auth->is_logged_in()): ?>
