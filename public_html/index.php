@@ -8,6 +8,9 @@
 			}
 		}
 		
+		$email = $auth->get_email();
+					echo $email;
+		
 		date_default_timezone_set('Asia/Tokyo');
 
 		$weekdays = array('日','月','火','水','木','金','土');
@@ -94,6 +97,7 @@
 
 				<?php
 					$email = $auth->get_email();
+					echo $email;
 
 					$url = "./data.json";
 
