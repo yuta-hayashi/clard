@@ -193,6 +193,7 @@
 		        echo "<div class='meta'>"
 		          .$row['remind_date'].
 		        "</div>";
+		        echo "<div class='meta'>最終更新者: ".htmlspecialchars( $row['_user'], ENT_QUOTES, 'UTF-8' )."</div>";
 		        echo "<div class='description'>"
 		          .$row['title'].
 		        "</div>
