@@ -64,6 +64,7 @@
 
 	<link rel="apple-touch-icon" size="152x152" href="/apple-touch-icon.png">
 	<link rel="icon" type="image/png" href="/favicon.png">
+	<meta name="theme-color" content="#27ae60">
 
 </head>
 
