@@ -180,15 +180,15 @@
 		    echo "<div class='card'>";
 		      echo "<div class='content'>";
 		        echo "<div class='header'>".
-		          $row['subject'].
+		          htmlspecialchars( $row['subject'], ENT_QUOTES, 'UTF-8' ).
 		        "</div>";
 
 		        echo "<div class='meta'>"
-		          .$row['remind_date'].
+		          .htmlspecialchars( $row['remind_date'], ENT_QUOTES, 'UTF-8' ).
 		        "</div>";
 		        echo "<div class='meta'>最終更新者: ".htmlspecialchars( $row['_user'], ENT_QUOTES, 'UTF-8' )."</div>";
 		        echo "<div class='description'>"
-		          .$row['title'].
+		          .htmlspecialchars( $row['title'], ENT_QUOTES, 'UTF-8' ).
 		        "</div>
 		      </div>";
 
