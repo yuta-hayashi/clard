@@ -1,55 +1,250 @@
 <!DOCTYPE html>
-<html lang="ja">
- <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <title>使い方 | Clard</title>
-
-  <link rel="apple-touch-icon" size="152x152" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" href="/favicon.png">
-  <meta name="theme-color" content="#27ae60">
-
- </head>
- <body>
-  <h1>Clardへようこそ</h1>
-  <p>Clardは、学生間で課題、授業変更、時間割などを確認できるリマインダーサービスです。</p>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <!-- Standard Meta -->
   
-  <hr>
-  
-  <h2>使い方</h2>
-  <div>
-   <a href="#1">はじめに: googleアカウントでログインする</a><br>
-   <a href="#2">・課題を登録する</a><br>
-   <a href="#3">・課題の内容を変更・削除する</a><br>
-   <a href="#4">・授業変更、時間割を見る</a><br>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <!-- Site Properties -->
+  <title>Homepage - Semantic</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.js"></script>
+
+
+  <style type="text/css">
+
+    .hidden.menu {
+      display: none;
+    }
+
+    .masthead.segment {
+      min-height: 700px;
+      padding: 1em 0em;
+      background-color: #66BB6A;
+    }
+    .masthead .logo.item img {
+      margin-right: 1em;
+    }
+    .masthead .ui.menu .ui.button {
+      margin-left: 0.5em;
+    }
+    .masthead h1.ui.header {
+      margin-top: 3em;
+      margin-bottom: 0em;
+      font-size: 4em;
+      font-weight: normal;
+      color: white;
+    }
+    .masthead h2 {
+      font-size: 1.7em;
+      font-weight: normal;
+    }
+    .masthead h3 {
+      color: white;
+      font-weight: normal;
+    }
+
+    .ui.vertical.stripe {
+      padding: 8em 0em;
+    }
+    .ui.vertical.stripe h3 {
+      font-size: 2em;
+    }
+    .ui.vertical.stripe .button + h3,
+    .ui.vertical.stripe p + h3 {
+      margin-top: 3em;
+    }
+    .ui.vertical.stripe .floated.image {
+      clear: both;
+    }
+    .ui.vertical.stripe p {
+      font-size: 1.33em;
+    }
+    .ui.vertical.stripe .horizontal.divider {
+      margin: 3em 0em;
+    }
+
+    .quote.stripe.segment {
+      padding: 0em;
+    }
+    .quote.stripe.segment .grid .column {
+      padding-top: 5em;
+      padding-bottom: 5em;
+    }
+
+    .footer.segment {
+      padding: 5em 0em;
+    }
+
+    .secondary.pointing.menu .toc.item {
+      display: none;
+    }
+
+    @media only screen and (max-width: 700px) {
+      .ui.fixed.menu {
+        display: none !important;
+      }
+      .secondary.pointing.menu .item,
+      .secondary.pointing.menu .menu {
+        display: none;
+      }
+      .secondary.pointing.menu .toc.item {
+        display: block;
+      }
+      .masthead.segment {
+        min-height: 350px;
+
+      }
+      .masthead h1.ui.header {
+        font-size: 2em;
+        margin-top: 1.5em;
+      }
+      .masthead h2 {
+        margin-top: 0.5em;
+        font-size: 1.5em;
+      }
+    }
+
+
+  </style>
+
+
+  <script>
+  $(document)
+    .ready(function() {
+
+      // fix menu when passed
+      $('.masthead')
+        .visibility({
+          once: false,
+          onBottomPassed: function() {
+            $('.fixed.menu').transition('fade in');
+          },
+          onBottomPassedReverse: function() {
+            $('.fixed.menu').transition('fade out');
+          }
+        })
+      ;
+
+      // create sidebar and attach to menu open
+      $('.ui.sidebar')
+        .sidebar('attach events', '.toc.item')
+      ;
+
+    })
+  ;
+  </script>
+</head>
+<body class="pushable">
+
+<!-- Page Contents -->
+<div class="pusher">
+  <div class="ui vertical masthead center aligned segment">
+
+    <div class="ui container">
+      <div class="ui large secondary pointing menu">
+
+        <div class="right item">
+          <a href="./index.php" class="ui button">ログイン</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="ui text container">
+      <h1 class="ui header">
+        <i class="checked calendar icon"></i>
+        Clardへようこそ
+      </h1>
+      <h3>Clardは、学生間で課題、授業変更、時間割などを確認できるリマインダーサービスです。</h3>
+      <a href="./index.php" class="ui huge yellow button">使ってみる <i class="right arrow icon"></i></a>
+    </div>
   </div>
-  
-  <hr>
-  
-  <h2 id="1">はじめに: googleアカウントでログインする</h2>
-  <img border="0" src="img/1.PNG" width=60% height=100% alt="スクショ1">
-  <p>Clardはgoogleアカウントによってユーザーを管理しますので、最初にgmailのアドレスを使ってログインしてください。</p>
-  <hr>
-  
-  <h2 id="2">・課題を登録する</h2>
-  <img border="0" src="img/2.PNG" width=60% height=100% alt="スクショ2"><br>
-  <p>①画面下部にあるクラスを選択します。<br>
-  ②画面左上の新規登録ボタンをクリックします。<br><br>
-  <img border="0" src="img/3.PNG" width=60% height=100% alt="スクショ3"><br>
-   ③登録画面に遷移するので教科名、内容、期限日を入力します。<br>
-   ④登録ボタンを押せば課題が追加されます。</p>
-  <hr>
-  
-  <h2 id="3">・課題の内容を変更・削除する</h2>
-  <img border="0" src="img/2.PNG" width=60% height=100% alt="スクショ4"><br>
-  <p>登録された課題の左下ボタンから変更、右下ボタンから削除を行えます。<br>
-  ちゃんとログが残るのでいたずらに更新しないようにしてください。</p>
-  <hr>
-  
-  
-  <h2 id="4">・授業変更、時間割を見る</h2>
-  <img border="0" src="img/4.PNG" width=60% height=100% alt="スクショ5"><br>
-  <p>授業変更、時間割タブをクリックすれば選択しているクラスの情報が表示されます。</p>
-  
-  
- </body>
+
+  <div class="ui vertical stripe segment">
+    <div class="ui middle aligned stackable grid container">
+      <div class="row">
+        <div class="nine wide column">
+          <h3 class="ui header">はじめに：Googleアカウントでログインする</h3>
+          <p>Clardはgoogleアカウントによってユーザーを管理しますので、最初にgmailのアドレスを使ってログインしてください。</p>
+        </div>
+        <div class="six wide right floated column">
+          <img src="./img/1.PNG" class="ui large bordered rounded image">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="nine wide column">
+          <h3 class="ui header">課題を登録する</h3>
+          <p>①画面下部にあるクラスを選択します。<br />②画面左上の新規登録ボタンをクリックします。</p>
+        </div>
+        <div class="six wide right floated column">
+          <img src="./img/2.PNG" class="ui large bordered rounded image">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="nine wide column">
+          <p>③登録画面に遷移するので教科名、内容、期限日を入力します。<br />④登録ボタンを押せば課題が追加されます。</p>
+        </div>
+        <div class="six wide right floated column">
+          <img src="./img/3.PNG" class="ui large bordered rounded image">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="nine wide column">
+          <h3 class="ui header">課題の内容を変更・削除する</h3>
+          <p>登録された課題の左下ボタンから変更、右下ボタンから削除を行えます。<br />ちゃんとログが残るのでいたずらに更新しないようにしてください。</p>
+        </div>
+        <div class="six wide right floated column">
+          <img src="./img/2.PNG" class="ui large bordered rounded image">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="nine wide column">
+          <h3 class="ui header">授業変更、時間割を見る</h3>
+          <p>授業変更、時間割タブをクリックすれば選択しているクラスの情報が表示されます。</p>
+        </div>
+        <div class="six wide right floated column">
+          <img src="./img/4.PNG" class="ui large bordered rounded image">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="center aligned column">
+          <a href="./index.php" class="ui huge button">ログイン</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ui vertical stripe segment">
+    <div class="ui text container">
+      <h3 class="ui header">報告フォーム</h3>
+      <p>Clardは現在も開発中のサービスです。<br />不具合や機能の提案などがありましたら、フォームにて送信してください。</p>
+      <a class="ui large button">準備中・・・</a>
+    </div>
+  </div>
+
+
+  <div class="ui vertical footer segment">
+    <div class="ui container">
+      <div class="ui stackable divided equal height stackable grid">
+        <div class="three wide column">
+          <h4 class="ui header">リンクメニュー</h4>
+          <div class="ui link list">
+            <a href="" class="item">準備中・・・</a>
+          </div>
+        </div>
+        <div class="seven wide column">
+          <h4 class="ui header">このサイトについて</h4>
+          <p>準備中・・・</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
 </html>

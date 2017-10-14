@@ -257,10 +257,14 @@
 					?>
 					<!--'1M','1E','1I','1C','1A','2M','2E','2I','2C','2A','3M','3E','3I','3C','3A','4M','4E','4I','4C','4A','5M','5E','5I','5C','5A','1EM','1AC','2EM','2AC','ALL' -->
 				</select>
-				<span class="login_info">
+				<div class="row">
 					<span class="hidden-xs"><?php $tmp=explode('@', $email); print $tmp[0]; ?> でログイン中</span>
-					<a href="./logout.php">ログアウト</a>
-				</span>
+					<a href="./logout.php" class="ui basic button">ログアウト</a>
+				
+				<a href="HowToUse.html">
+		<button class="ui green basic button"><i class="help circle icon"></i>使い方</button>
+	</a>
+	</div>
 			</div>
 			</div>
 		  </div>
@@ -276,6 +280,7 @@
 	exit ; ?>
 
 <div class="ui middle aligned center aligned grid">
+	
 	<h2>ログイン</h2>
 	<h3>学校のGmailアカウントを使ってログインしてください</h3>
 	<div class="row">
