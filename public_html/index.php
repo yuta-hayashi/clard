@@ -43,6 +43,11 @@
 		$user = "root";
 		$pass = "clardpass555";
 		$db = "reminder";
+		/*
+		$user = "root";
+		$pass = "clardpass555";
+		$db = "reminder";
+		*/
 
 	 $param = "mysql:dbname=".$db.";host=".$host;
 	 $pdo = new PDO($param, $user, $pass);
@@ -61,6 +66,7 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.css"/>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
 
 	<link rel="apple-touch-icon" size="152x152" href="/apple-touch-icon.png">
 	<link rel="icon" type="image/png" href="/favicon.png">
@@ -85,7 +91,7 @@
 <?php if($auth->is_logged_in()): ?>
 	<div class="ui top attached tabular menu">
 		 <a class="item active" data-tab="reminder">課題一覧</a>
-	  <a class="item" data-tab="container">授業変更</a>
+	  <a class="item" data-tab="container"><s>授業変更</s></a>
 	  <a class="item" data-tab="time_table">授業時間割</a>
 
 	</div>
@@ -191,11 +197,11 @@
 		          htmlspecialchars( $row['subject'], ENT_QUOTES, 'UTF-8' ).
 		        "</div>";
 
-		        echo "<div class='meta'>"
+		        echo "<div class='meta'>期日: "
 		          .htmlspecialchars( $row['remind_date'], ENT_QUOTES, 'UTF-8' ).
 		        "</div>";
 		        echo "<div class='meta'>最終更新者: ".htmlspecialchars( $row['_user'], ENT_QUOTES, 'UTF-8' )."</div>";
-		        echo "<div class='description'>"
+		        echo "<div class='card-description'>"
 		          .htmlspecialchars( $row['title'], ENT_QUOTES, 'UTF-8' ).
 		        "</div>
 		      </div>";

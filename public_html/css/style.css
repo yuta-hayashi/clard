@@ -1,0 +1,18 @@
+@charset "utf-8";
+body{
+	margin: 1% 5%;
+}
+.card-description{
+	padding: 0.1em;
+	font-size: 1.2em;
+	color: rgba(.85);
+}
+
+@media screen and (max-width: 480px){
+	body{
+		margin: 0.5% 2.5%;
+		}
+	.ui.cards{
+		 margin: 0 auto; 
+	}
+}
