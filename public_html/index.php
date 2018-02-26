@@ -81,12 +81,25 @@
 	Clard&#32;&#946;v2</h1>
 	</h1>
 
-	<div class="ui warning message">
+<div class="ui huge red message">
+	<div class="header">
+		サービス提供終了のお知らせ
+	</div>
+	メンテナンスが困難になったため、Clardは今年度で提供を終了します。<br>
+	ご利用ありがとうございました。
+	<small>
+		リニューアルして復活するかもです…
+	</small>
+</div>
+
+<div class="ui warning message">
   <div class="header">
 	このウェブサービスは電子情報工学科のみ利用できます。
   </div>
   なお、ベータ版につき不具合が生じる場合があります。
 </div>
+
+
 
 <?php if($auth->is_logged_in()): ?>
 	<div class="ui top attached tabular menu">
