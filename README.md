@@ -1,7 +1,8 @@
-## Clardのプロジェクト管理とソース管理のプライベートリポジトリです
+## Clardのプロジェクト管理とソース管理の~~プライベートリポジトリ~~です
 変更履歴等はWikiへ、問題点や議論したいことはIssuesへ、タスクはProjectsに書き込んでください。  
-まだ、使い慣れてないけど頑張ろう(・∀・)
-### Markdown
+
+
+### Markdownの使い方
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
